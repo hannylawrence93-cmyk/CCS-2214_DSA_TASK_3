@@ -1,0 +1,23 @@
+Question (c): (A + B) * (C - D) / E
+
+Step 1: Convert the brackets.
+1. A + B becomes AB+
+2. C - D becomes CD-
+
+Step 2: Combine using multiplication.
+AB+ and CD- become AB+CD-*.
+
+Step 3: Divide the result by E.
+Append E and the division operator.
+
+Final Postfix Expression:
+AB+CD-*E/
+
+Expression Tree:
+             /
+           /   \
+          *     E
+        /   \
+       +     -
+      / \   / \
+     A   B C   D

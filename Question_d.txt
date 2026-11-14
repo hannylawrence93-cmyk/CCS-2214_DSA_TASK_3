@@ -1,0 +1,32 @@
+Question (d): A + (B * C - (D / E ^ F))
+
+Note: The assignment expression appears to have a missing closing parenthesis. The working below assumes the intended expression is:
+A + (B * C - (D / E ^ F))
+
+Step 1: Convert the exponentiation.
+E ^ F becomes EF^.
+
+Step 2: Convert the division.
+D / (E ^ F) becomes DEF^/.
+
+Step 3: Convert the multiplication.
+B * C becomes BC*.
+
+Step 4: Perform subtraction.
+B * C - (D / E ^ F) becomes BC*DEF^/-.
+
+Step 5: Perform addition with A.
+
+Final Postfix Expression:
+ABC*DEF^/-+
+
+Expression Tree:
+              +
+             / \
+            A   -
+               / \
+              *   /
+             / \ / \
+            B  C D  ^
+                  / \
+                 E   F

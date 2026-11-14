@@ -1,0 +1,18 @@
+Question (b): (A + B) * (C - D)
+
+Step 1: Convert each bracket separately.
+1. A + B becomes AB+
+2. C - D becomes CD-
+
+Step 2: Combine the expressions using multiplication.
+AB+ and CD- are combined using *.
+
+Final Postfix Expression:
+AB+CD-*
+
+Expression Tree:
+          *
+         / \
+        +   -
+       / \ / \
+      A  B C  D

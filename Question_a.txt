@@ -1,0 +1,23 @@
+Question (a): (A + (B - C) * D)
+
+Step 1: Identify the operators.
+The expression contains addition (+), subtraction (-), and multiplication (*).
+
+Step 2: Convert to postfix.
+1. B - C becomes BC-
+2. (B - C) * D becomes BC-D*
+3. A + (B - C) * D becomes ABC-D*+
+
+Final Postfix Expression:
+ABC-D*+
+
+Expression Tree:
+          +
+         / \
+        A   *
+           / \
+          -   D
+         / \
+        B   C
+
+The root operator is addition because it is the final operation performed.

@@ -1,0 +1,43 @@
+Question (e): 12 / 3 * 6 + 6 - 6 + 8 / 2
+
+Step 1: Identify operator precedence.
+Multiplication and division have higher precedence than addition and subtraction. Operators of equal precedence are evaluated from left to right.
+
+Step 2: Convert the expression step by step.
+1. 12 / 3 becomes 12 3 /
+2. (12 / 3) * 6 becomes 12 3 / 6 *
+3. Add 6 becomes 12 3 / 6 * 6 +
+4. Subtract 6 becomes 12 3 / 6 * 6 + 6 -
+5. 8 / 2 becomes 8 2 /
+6. Add the final result of 8 / 2.
+
+Final Postfix Expression:
+12 3 / 6 * 6 + 6 - 8 2 / +
+
+Expression Tree:
+                  +
+                /   \
+               -     /
+             /  \   / \
+            +    6 8   2
+           / \
+          *   6
+         / \
+        /   6
+       / \
+      /   3
+     12
+
+A clearer structural description of the tree is:
+root +
+- left child: subtraction
+  - left child: addition
+    - left child: multiplication
+      - left child: division (12, 3)
+      - right child: 6
+    - right child: 6
+  - right child: 6
+- right child: division (8, 2)
+
+The tree represents:
+((((12 / 3) * 6) + 6) - 6) + (8 / 2)
