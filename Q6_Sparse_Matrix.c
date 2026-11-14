@@ -1,0 +1,70 @@
+#include <stdio.h>
+
+int main() {
+
+    int matrix[10][10];
+    int sparse[100][3];
+
+    int rows, cols;
+    int i, j, k = 1;
+
+    printf("Enter number of rows: ");
+    scanf("%d", &rows);
+
+    printf("Enter number of columns: ");
+    scanf("%d", &cols);
+
+    if (rows <= 0 || rows > 10 ||
+        cols <= 0 || cols > 10) {
+
+        printf("Invalid matrix size.\n");
+        return 1;
+    }
+
+    printf("Enter matrix elements:\n");
+
+    for (i = 0; i < rows; i++) {
+
+        for (j = 0; j < cols; j++) {
+
+            scanf("%d", &matrix[i][j]);
+        }
+    }
+
+    // Store matrix dimensions
+    sparse[0][0] = rows;
+    sparse[0][1] = cols;
+
+    // Store non-zero elements
+    for (i = 0; i < rows; i++) {
+
+        for (j = 0; j < cols; j++) {
+
+            if (matrix[i][j] != 0) {
+
+                sparse[k][0] = i;
+                sparse[k][1] = j;
+                sparse[k][2] = matrix[i][j];
+
+                k++;
+            }
+        }
+    }
+
+    // Store number of non-zero elements
+    sparse[0][2] = k - 1;
+
+    printf("\nSparse Matrix Representation:\n");
+
+    printf("Row\tColumn\tValue\n");
+
+    for (i = 0; i < k; i++) {
+
+        printf("%d\t%d\t%d\n",
+               sparse[i][0],
+               sparse[i][1],
+               sparse[i][2]);
+    }
+
+    return 0;
+}
